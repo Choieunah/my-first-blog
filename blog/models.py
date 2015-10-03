@@ -1,10 +1,16 @@
 from django.db import models
 from django.utils import timezone
+from django import forms
+
+def check_length(title):
+    if len(title) < 10 :
+        raise forms.ValidationError('10글자 이상!!')
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, validators=[check_length])
     text = models.TextField()
+    #lnglat = models.CharField(max_length=100)
     created_date = models.DateTimeField(
         default = timezone.now)
     published_date = models.DateTimeField(
