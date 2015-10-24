@@ -1,9 +1,10 @@
 {% extends "blog/base.html" %}
 {% load bootstrap3 %}
 {% block content %}
+<div class = "fullmain">
 <div class="content container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8" id="panel">
             <form action = "" method="POST">
                 {% csrf_token %}
                 {% bootstrap_form form %}    
@@ -16,5 +17,6 @@
             </form>
         </div>
     </div>
+</div>
 </div>
 {% endblock %}

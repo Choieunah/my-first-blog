@@ -9,6 +9,7 @@ def check_length(title):
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200, validators=[check_length])
+    
     text = models.TextField()
     #lnglat = models.CharField(max_length=100)
     created_date = models.DateTimeField(

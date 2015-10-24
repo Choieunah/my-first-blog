@@ -5,4 +5,5 @@ urlpatterns = [
     url(r'^(?P<pk>\d+)/$', 'blog.views.post_detail'),
     url(r'^new/$', 'blog.views.post_new'),
     url(r'^(?P<pk>\d+)/edit/$', 'blog.views.post_edit'),
+    url(r'^list/$', 'blog.views.book_list'),
 ]

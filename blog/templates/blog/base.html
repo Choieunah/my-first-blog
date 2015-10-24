@@ -4,6 +4,82 @@
 <html>
 <head>
 <meta charset = "utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+$(document).ready(function(){
+  
+        $("#panel").slideToggle("slow");
+
+});
+    </script>
+    <style>
+        #navcontainer {
+	position : absolute;
+	top : 10px;
+	left :70%;
+-webkit-animation : logo2 1.5s;
+
+}
+@-webkit-keyframes logo2 {
+	from {
+	margin-left: -100px;
+	-webkit-transform:  scale(1);
+	}
+	50% {
+	-webkit-transform:  scale(1);
+
+	}
+	to {
+	margin-left: 0px;
+	-webkit-transform:  scale(1);
+	}
+	}
+    .page-header {
+        text-align: center;
+    }
+        
+        
+ul#navlist {
+	margin-left: 0;
+	padding-left: 0;
+	white-space: nowrap;
+}
+#navlist li {
+	display: inline;
+	list-style-type: none;
+	padding:50px 0 0 1px;
+	float:left;
+}
+#navlist a {
+	padding:1200px 10px 10px 10px;
+	color: #444444;
+	text-transform:uppercase;
+	text-decoration:none;
+	font-size:18px;
+	font-weight:bold;
+}
+#navlist a:hover {
+	background:#18bbff;
+	text-shadow:none;
+	color:#ffffff;
+	border-radius:0 0 5px 5px;
+    box-shadow: 0 3px #0695d1;
+}
+#navlist #active a {
+	background:#18bbff;
+	text-shadow: none;
+    color: #ffffff;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 3px #0695d1;
+}
+    .content container{
+        text-align: center;
+    }
+        .btn1{
+            margin-left: 5%;
+        }
+        
+    </style>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
@@ -14,9 +90,10 @@
 <link rel="stylesheet" href="{% static "blog/blog.css" %}"/>
 </head>
 <body>
-    <div class = "page-header">
-        <h1><a href="{% url "blog.views.post_list" %}">Django Girls Blog</a></h1>
+    <div class = "page-header" id="flip">
+        <h1><a href="{% url "blog.views.post_list" %}" >Sunrin Reading Club</a></h1>
     </div>
+
     {% block content %}
     {% endblock %}
 </body>

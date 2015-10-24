@@ -3,6 +3,8 @@ from .models import Post
 from .forms import PostForm
 
 
+
+
 def post_list(request):
     q = request.GET.get('q', '')
 
@@ -10,6 +12,7 @@ def post_list(request):
 
     if q:
         post_list = post_list.filter(title__icontains=q)
+        
 
     return render(request, 'blog/post_list.html',{
             'post_list' : post_list,

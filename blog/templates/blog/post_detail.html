@@ -1,11 +1,11 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
+<div class = "fullmain">
 <div class="content container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8" id = "panel">
 <h1>{{ post.title }}</h1>
-
 {{ post.text|linebreaks }}
 
 <hr/>
@@ -14,6 +14,7 @@
 
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}

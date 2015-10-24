@@ -3,8 +3,9 @@
 {% block content %}
 <div id="navcontainer">
             <ul id="navlist">
-                <li id="active"><a href="#">Home</a></li>
-                <li><a href="{% url "blog.views.book_list" %}">List</a></li>
+                <li><a href="{% url "blog.views.post_list"%}">Home</a></li>
+                <li id ="active"><a href="{% url "blog.views.book_list" %}">List</a></li>
+ 
             </ul>
         </div>
 <div class ="fullmain">
@@ -19,19 +20,17 @@
                     </div>
         <div class = "btn1">
                 <a href="{% url "blog.views.post_new" %}" class ="btn btn-info" >
-                새 글
+                Write
             </a>
             </div>
             </p>
-         
-
         {% for post in post_list %}
             <div class ="post">
                 <div class ="date">
                         {{post.created_date}}
                 </div>
                 <h1><a href="{% url "blog.views.post_detail" post.pk %}">{{ post.title }}</a></h1>
-                 <p id="author">글쓴이 : {{ post.author }}</p>
+                  <p id="author">글쓴이 : {{ post.author }}</p>
                <!-- <p>{{ post.text|linebreaks }}</p>-->
             </div>
         {% endfor %}
